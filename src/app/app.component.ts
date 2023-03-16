@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Weather } from './models';
@@ -14,6 +14,8 @@ export class AppComponent implements OnInit{
     form!: FormGroup
     weather: Weather[] = []
     weather$!: Observable<Weather[]>
+
+    cityName!: string
   
     constructor(private fb: FormBuilder, private weatherSvc: WeatherService) { }
     
@@ -23,7 +25,8 @@ export class AppComponent implements OnInit{
 
     getWeather() {
       const city = this.form.value.city
-      console.info('>>> city: ', city)
+      this.cityName=city
+      console.info('>>> city: ', city, this.cityName)
       // // When not using observables
       // this.weatherSvc.getWeather(city)
       //   .then(result => {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Weather } from '../models';
 import { WeatherService } from '../weatherservice';
@@ -11,7 +11,9 @@ import { WeatherService } from '../weatherservice';
 export class WeatherDisplayComponent implements OnInit, OnDestroy {
   
     weather$!: Observable<Weather[]>
+    
     weather: Weather[] = []
+
     weatherSub!: Subscription
 
     constructor(private weatherSvc: WeatherService) { }

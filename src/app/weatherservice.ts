@@ -6,7 +6,7 @@ import { Weather } from "./models";
 //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=ec9072624f99c20d4bf8c41c4a168c49
 
 const WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather"
-const APPID = "ec9072624f99c20d4bf8c41c4a168c49"
+const APPID = "<API KEY HERE"
 
 @Injectable()
 export class WeatherService {
